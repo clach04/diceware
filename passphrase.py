@@ -26,7 +26,7 @@ def stupid_extra_stuff():
 try:
     num_words = int(sys.argv[1])
 except (IndexError, ValueError):
-    num_words = 5
+    num_words = 6
 w = [s.split()[1] for s in open(sys.path[0]+'/words')]
 passphrase = '-'.join(choice(w) for i in range(num_words))
 print(passphrase)
