@@ -4,4 +4,4 @@
 # Because I have no dice:
 import random, sys
 w = [s.split()[1] for s in open(sys.path[0]+'/words')]
-print '-'.join(random.SystemRandom().choice(w) for i in range(5))
+print('-'.join(random.SystemRandom().choice(w) for i in range(5)))
