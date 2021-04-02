@@ -3,7 +3,12 @@
 # (words file is https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt)
 # Because I have no dice:
 
-import random
+try:
+    from secrets import choice
+except ImportError:
+    import random
+    choice = random.SystemRandom().choice
+import string
 import sys
 
 
@@ -12,5 +17,5 @@ try:
 except (IndexError, ValueError):
     num_words = 5
 w = [s.split()[1] for s in open(sys.path[0]+'/words')]
-passphrase = '-'.join(random.SystemRandom().choice(w) for i in range(num_words))
+passphrase = '-'.join(choice(w) for i in range(num_words))
 print(passphrase)
