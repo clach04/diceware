@@ -12,6 +12,17 @@ import string
 import sys
 
 
+def stupid_extra_stuff():
+    """return a random upper case letter, digit and "special character" which some password policies now require
+    returns them in order (not yet randomized, may never be....)
+    """
+    special_characters = []
+    special_characters.append(choice(string.ascii_uppercase))
+    special_characters.append(choice(string.digits))
+    special_characters.append(choice(string.punctuation))
+    return ''.join(special_characters)
+
+
 try:
     num_words = int(sys.argv[1])
 except (IndexError, ValueError):
@@ -19,3 +30,4 @@ except (IndexError, ValueError):
 w = [s.split()[1] for s in open(sys.path[0]+'/words')]
 passphrase = '-'.join(choice(w) for i in range(num_words))
 print(passphrase)
+print(passphrase+stupid_extra_stuff())
