@@ -14,10 +14,10 @@ cd diceware
 For example:
 
 ```
-$ ./passphrase
+$ ./passphrase.py
 panoramic-nectar-precut-smith-banana
 
-$ py -3 passphrase 7
+$ py -3 passphrase.py 7
 evacuate-skinhead-superman-uselessly-affecting-moneyless-scurvy
 evacuate-skinhead-superman-uselessly-affecting-moneyless-scurvyN1+
 ```
